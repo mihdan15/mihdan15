@@ -1,5 +1,5 @@
 # 💫 About Me:
-Hi, I'm Mihdan ADvani ! I am a student currently studying Information Technology. I am passionate about learning and experimenting with new technologies, and am currently focusing on learning web development and coding.<br><br>I am particularly interested in applying machine learning and data science techniques to solve real-world problems, and am always looking for ways to improve my skills in these areas. In my free time, I enjoy participating in hackathons and working on personal projects to improve my skills and broaden my knowledge. I am always looking for new opportunities to collaborate and learn from others in the tech community.<br><br>You can check out some of my projects on my GitHub profile, or visit my website at https://mihdanadvani.my.id/ to learn more about me.
+Hi, I'm Mihdan Advani ! I am a student currently studying Information Technology. I am passionate about learning and experimenting with new technologies, and am currently focusing on learning web development and coding.<br><br>I am particularly interested in applying machine learning and data science techniques to solve real-world problems, and am always looking for ways to improve my skills in these areas. In my free time, I enjoy participating in hackathons and working on personal projects to improve my skills and broaden my knowledge. I am always looking for new opportunities to collaborate and learn from others in the tech community.<br><br>You can check out some of my projects on my GitHub profile, or visit my website at https://mihdanadvani.my.id/ to learn more about me.
 
 
 ## 🌐 Socials:
@@ -18,8 +18,6 @@ Hi, I'm Mihdan ADvani ! I am a student currently studying Information Technology
 ### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
-### 😂 Random Dev Meme
-<img src="https://random-memer.herokuapp.com/" width="512px"/>
 
 ---
 [![](https://visitcount.itsvg.in/api?id=mihdan15&icon=0&color=0)](https://visitcount.itsvg.in)
