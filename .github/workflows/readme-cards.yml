@@ -1,0 +1,52 @@
+# Rebuilds the GitHub stats cards used in README.md.
+# The public github-readme-stats.vercel.app instance is paused, so the cards are
+# generated here and committed as static SVGs in profile/.
+name: Update README cards
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # daily, 07:00 WIB
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/readme-cards.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme-cards
+  cancel-in-progress: false
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Stats card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&include_all_commits=true&hide_rank=true&theme=tokyonight
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Top languages card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          # Jupyter, HTML, CSS and Blade are hidden because they inflate byte counts;
+          # the 50/50 weighting also counts how many repos use each language.
+          options: username=${{ github.repository_owner }}&layout=compact&langs_count=6&size_weight=0.5&count_weight=0.5&hide=jupyter%20notebook,html,css,blade&theme=tokyonight
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/*.svg
+          git commit -m "Update README cards" || exit 0
+          git push
